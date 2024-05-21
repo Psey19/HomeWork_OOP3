@@ -17,9 +17,9 @@ public class Program {
         stream1.addStudentGroupInStream(studentGroup4);
         stream1.addStudentGroupInStream(studentGroup4);
 
-        //Выводим содержимое 1 потока и его размер
+        //Выводим содержимое 1 потока
+        System.out.println("Учебные группы 1 потока:");
         printListIterator(stream1);
-        System.out.println(stream1.getStream().size());
         System.out.println("--------------------------");
 
         //Создаём 2 поток
@@ -28,9 +28,9 @@ public class Program {
         stream2.addStudentGroupInStream(studentGroup3);
         stream2.addStudentGroupInStream(studentGroup5);
 
-        //Выводим содержимое 2 потока и его размер
+        //Выводим содержимое 2 потока
+        System.out.println("Учебные группы 2 потока:");
         printListIterator(stream2);
-        System.out.println(stream2.getStream().size());
         System.out.println("--------------------------");
 
         //Создаём 3 поток
@@ -41,9 +41,9 @@ public class Program {
         stream3.addStudentGroupInStream(studentGroup2);
         stream3.addStudentGroupInStream(studentGroup5);
 
-        //Выводим содержимое 3 потока и его размер
+        //Выводим содержимое 3 потока
+        System.out.println("Учебные группы 3 потока:");
         printListIterator(stream3);
-        System.out.println(stream3.getStream().size());
         System.out.println("--------------------------");
 
         //Создаём Список потоков и выводим его
@@ -52,23 +52,29 @@ public class Program {
         streams.add(stream2);
         streams.add(stream3);
 
+        System.out.println("Список потоков:");
         printListIterator2(streams);
         System.out.println("--------------------------");
 
         //Сортируем Список потоков и выводим его
         StreamService streamService = new StreamService();
         streamService.getSortedStreams(streams);
+        System.out.println("Отсортированный список потоков:");
         printListIterator2(streams);
 
     }
+    //Метод для вывода списка учебных групп в потоке
     static void printListIterator(Stream stream){
         for(StudentGroup studentGroup: stream){
             System.out.println(studentGroup);
         }
     }
+    //Метод для вывода потоков в списке потоков
     static void printListIterator2(List<Stream> streams){
         for(Stream stream: streams){
             System.out.println(stream);
+            System.out.printf("%s: %d\n", "Количество групп в потоке", stream.getStream().size());
         }
+
     }
 }
