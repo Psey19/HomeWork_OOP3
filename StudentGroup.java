@@ -5,10 +5,8 @@ public class StudentGroup {
         this.studentGroup = studentGroup;
     }
 
-    @Override
+  @Override
     public String toString() {
-        return "StudentGroup{" +
-                "studentGroup='" + studentGroup + '\'' +
-                '}';
+        return "studentGroup: '" + studentGroup + '\'';
     }
 }
