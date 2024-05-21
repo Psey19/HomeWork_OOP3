@@ -11,30 +11,30 @@ public class Program {
         StudentGroup studentGroup5 = new StudentGroup("Project manager");
 
         //Создаём 1 поток
-        Stream stream1 = new Stream();
+        Stream stream1 = new Stream("Stream №1");
         stream1.addStudentGroupInStream(studentGroup2);
         stream1.addStudentGroupInStream(studentGroup4);
         stream1.addStudentGroupInStream(studentGroup4);
         stream1.addStudentGroupInStream(studentGroup4);
 
         //Выводим содержимое 1 потока
-        System.out.println("Учебные группы 1 потока:");
+        System.out.println(stream1.getStreamName());
         printListIterator(stream1);
         System.out.println("--------------------------");
 
         //Создаём 2 поток
-        Stream stream2 = new Stream();
+        Stream stream2 = new Stream("Stream №2");
         stream2.addStudentGroupInStream(studentGroup1);
         stream2.addStudentGroupInStream(studentGroup3);
         stream2.addStudentGroupInStream(studentGroup5);
 
         //Выводим содержимое 2 потока
-        System.out.println("Учебные группы 2 потока:");
+        System.out.println(stream2.getStreamName());
         printListIterator(stream2);
         System.out.println("--------------------------");
 
         //Создаём 3 поток
-        Stream stream3 = new Stream();
+        Stream stream3 = new Stream("Stream №3");
         stream3.addStudentGroupInStream(studentGroup4);
         stream3.addStudentGroupInStream(studentGroup4);
         stream3.addStudentGroupInStream(studentGroup1);
@@ -42,7 +42,7 @@ public class Program {
         stream3.addStudentGroupInStream(studentGroup5);
 
         //Выводим содержимое 3 потока
-        System.out.println("Учебные группы 3 потока:");
+        System.out.println(stream3.getStreamName());
         printListIterator(stream3);
         System.out.println("--------------------------");
 
@@ -75,6 +75,5 @@ public class Program {
             System.out.println(stream);
             System.out.printf("%s: %d\n", "Количество групп в потоке", stream.getStream().size());
         }
-
     }
 }
