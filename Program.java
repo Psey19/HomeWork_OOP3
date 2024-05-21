@@ -33,10 +33,25 @@ public class Program {
         System.out.println(stream2.getStream().size());
         System.out.println("--------------------------");
 
+        //Создаём 3 поток
+        Stream stream3 = new Stream();
+        stream3.addStudentGroupInStream(studentGroup4);
+        stream3.addStudentGroupInStream(studentGroup4);
+        stream3.addStudentGroupInStream(studentGroup1);
+        stream3.addStudentGroupInStream(studentGroup2);
+        stream3.addStudentGroupInStream(studentGroup5);
+
+        //Выводим содержимое 3 потока и его размер
+        printListIterator(stream3);
+        System.out.println(stream3.getStream().size());
+        System.out.println("--------------------------");
+
         //Создаём Список потоков и выводим его
         List<Stream> streams = new ArrayList<>();
         streams.add(stream1);
         streams.add(stream2);
+        streams.add(stream3);
+
         printListIterator2(streams);
         System.out.println("--------------------------");
 
