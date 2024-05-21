@@ -1,12 +1,16 @@
 public class StudentGroup {
-    private String studentGroup;
+    private String studentGroupName;
 
-    public StudentGroup(String studentGroup) {
-        this.studentGroup = studentGroup;
+    public StudentGroup(String studentGroupName) {
+        this.studentGroupName = studentGroupName;
     }
 
-  @Override
+    public String getStudentGroupName() {
+        return studentGroupName;
+    }
+
+    @Override
     public String toString() {
-        return "studentGroup: '" + studentGroup + '\'';
+        return "studentGroup: '" + studentGroupName + '\'';
     }
 }
