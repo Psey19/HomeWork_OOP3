@@ -11,6 +11,6 @@ public class StudentGroup {
 
     @Override
     public String toString() {
-        return "studentGroup: '" + studentGroupName + '\'';
+        return studentGroupName;
     }
 }
