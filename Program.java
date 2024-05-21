@@ -10,6 +10,7 @@ public class Program {
         StudentGroup studentGroup4 = new StudentGroup("Product manager");
         StudentGroup studentGroup5 = new StudentGroup("Project manager");
 
+
         //Создаём 1 поток
         Stream stream1 = new Stream("Stream №1");
         stream1.addStudentGroupInStream(studentGroup2);
@@ -58,7 +59,7 @@ public class Program {
     }
     //Метод для вывода списка учебных групп в потоке
     static void printStream(Stream stream){
-        System.out.println(stream.getStreamName());
+        System.out.printf(stream.getStreamName() + ": \n");
         for(StudentGroup studentGroup: stream){
             System.out.println(studentGroup);
         }
